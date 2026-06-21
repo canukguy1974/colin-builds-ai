@@ -11,7 +11,44 @@ A local research tool that collects rising AI projects from GitHub, Hugging Face
 
 The first run creates a baseline. Later runs can use changes in stars, likes, downloads, points, and comments as real momentum signals.
 
-## Windows setup
+## WSL setup — recommended
+
+Keep the project inside the Linux filesystem for better performance rather than working from `/mnt/c`.
+
+Open Ubuntu or your preferred WSL distribution and run:
+
+```bash
+cd ~
+git clone https://github.com/canukguy1974/colin-builds-ai.git
+cd colin-builds-ai/projects/ai-trend-radar
+bash setup.sh
+bash run.sh
+```
+
+The setup script:
+
+- checks for Python and Git
+- installs the required Ubuntu packages when necessary
+- creates `.venv`
+- installs the Python dependency
+- creates a private `.env` file
+- creates the `data` and `reports` folders
+
+After a successful run, the report should open in your Windows browser. The file is also available at:
+
+```text
+reports/latest.html
+```
+
+To run it again later:
+
+```bash
+cd ~/colin-builds-ai/projects/ai-trend-radar
+git pull
+bash run.sh
+```
+
+## Windows PowerShell setup
 
 Open PowerShell in this folder:
 
@@ -20,8 +57,6 @@ Set-ExecutionPolicy -Scope Process Bypass
 .\setup.ps1
 .\run.ps1
 ```
-
-The dashboard opens automatically after a successful run.
 
 ## Optional GitHub token
 
