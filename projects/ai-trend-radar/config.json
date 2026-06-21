@@ -1,0 +1,35 @@
+{
+  "radar": {
+    "lookback_days": 14,
+    "top_n": 25,
+    "minimum_score": 14,
+    "keywords": [
+      "ai", "artificial intelligence", "llm", "agent", "agentic", "mcp",
+      "multimodal", "rag", "automation", "local ai", "voice ai", "video ai",
+      "coding agent", "computer use"
+    ]
+  },
+  "sources": {
+    "github": {
+      "minimum_stars": 10,
+      "max_results_per_query": 25,
+      "queries": [
+        "topic:artificial-intelligence",
+        "topic:llm",
+        "topic:ai-agents",
+        "topic:generative-ai",
+        "topic:model-context-protocol"
+      ]
+    },
+    "huggingface": {
+      "models": true,
+      "spaces": true,
+      "max_results_each": 25
+    },
+    "hackernews": {
+      "feeds": ["topstories", "newstories"],
+      "inspect_per_feed": 60,
+      "max_results": 20
+    }
+  }
+}
